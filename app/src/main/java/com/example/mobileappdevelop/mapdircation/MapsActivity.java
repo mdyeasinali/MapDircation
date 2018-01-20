@@ -48,15 +48,11 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     private Button btnIns;
     private Button btnnext;
 
-    private PolylineOptions polylineOptions, blackPolylineOptions;
-    private Polyline blackPolyline, greyPolyLine;
+    private PolylineOptions polylineOptions;
+    private Polyline greyPolyLine;
     private DirectionRecponse directionRecponse;
     private List<LatLng> polyLineList;
     private Marker marker;
-    private int index, next;
-    private float v;
-    private Handler handler;
-    private LatLng startPosition, endPosition;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -131,16 +127,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
 
 
-
-//                        blackPolylineOptions = new PolylineOptions();
-//                        blackPolylineOptions.width(5);
-//                        blackPolylineOptions.color(Color.BLACK);
-//                        blackPolylineOptions.startCap(new SquareCap());
-//                        blackPolylineOptions.endCap(new SquareCap());
-//                        blackPolylineOptions.jointType(ROUND);
-//                        blackPolyline = mMap.addPolyline(blackPolylineOptions);
-
-
                     }
 
                     //Update latlo
@@ -177,23 +163,13 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                             .flat(true)
                             .icon(BitmapDescriptorFactory.fromResource(R.drawable.car)));
 
-//
-
-
-//                    marker = mMap.addMarker(new MarkerOptions().position(latLng)
-//                            .flat(true)
-//                            .icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_car)));
-//                    mMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
-//                    mMap.moveCamera(CameraUpdateFactory.newCameraPosition(new CameraPosition.Builder()
-//                            .target(mMap.getCameraPosition().target)
-//                            .zoom(17)
-//                            .bearing(30)
-//                            .tilt(45)
-//                            .build()));
-
-//                    marker = mMap.addMarker(new MarkerOptions().position(latLng)
-//                            .flat(true)
-//                            .icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_car)));
+                    mMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
+                    mMap.moveCamera(CameraUpdateFactory.newCameraPosition(new CameraPosition.Builder()
+                            .target(mMap.getCameraPosition().target)
+                            .zoom(17)
+                            .bearing(30)
+                            .tilt(45)
+                            .build()));
 
 
                 }
